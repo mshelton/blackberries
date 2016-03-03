@@ -3,7 +3,7 @@
 author = Bart Otten
 project = Threat Central
 maintainer = Bart Otten
-email = bart.otten@hp.com
+email = tc-support@hpe.com
 
 [remote]
 packages =
