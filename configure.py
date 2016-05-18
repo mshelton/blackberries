@@ -59,11 +59,11 @@ def insert_account_details():
             print "Failed loading getpass module, please add your Threat Central account details to {}".format(
                 join(expanduser("~"), '.canari', 'ThreatCentral.conf'))
         else:
-            print "Please insert your Threat Central account details"
+            print "Please enter your Threat Central account details"
             print ""
             return raw_input("Username: "), getpass()
     else:
-        return multpasswordbox(msg='Please enter your username and password for Threat Central',
+        return multpasswordbox(msg='Please enter your username and password for Threat Central.',
                                title='Threat Central', fields=('username', 'password'))
 
 
@@ -71,7 +71,7 @@ def save_apikey():
     try:
         from ThreatCentral.transforms.common.client import generate_apikey, set_to_config
     except ImportError as e:
-        print "Failed loading ThreatCentral module, please reinstall ThreatCentral"
+        print "Failed loading ThreatCentral module. Please reinstall ThreatCentral."
         exit(e)
     else:
         acc_details = insert_account_details()
@@ -160,7 +160,7 @@ def init():
         from ThreatCentral.transforms.common.client import (check_config, get_from_config, set_to_config,
                                                             canari_conf_path)
     except ImportError:
-        exit("Failed loading some ThreadCentral modules, please reinstall ThreatCentral!")
+        exit("Failed loading some ThreadCentral modules. Please reinstall ThreatCentral.")
     except KeyboardInterrupt:
         exit("Quiting")
     else:
@@ -184,7 +184,7 @@ def interactive():
     if q == 'y':
         init()
 
-    q = raw_input("Do you want to setup the API key? y/N ").lower().strip()
+    q = raw_input("Do you want to set up the API key? y/N ").lower().strip()
     if q == 'y':
         if save_apikey():
             print 'API KEY saved to {}'.format(join(expanduser("~"), '.canari', 'ThreatCentral.conf'))
