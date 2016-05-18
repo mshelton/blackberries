@@ -4,20 +4,20 @@ Maltego transform for Threat Central.
 
 ## Installation instructions
 
-1. Install setuptools.
+1) Install setuptools.
 
    Open a terminal. 
 ```
 curl https://bootstrap.pypa.io/ez_setup.py -s -o - | sudo python
 ```
-2. Unzip ThreatCentral.zip in the terminal cd to the unzipped ThreatCentral folder.
+2) Unzip ThreatCentral.zip in the terminal cd to the unzipped ThreatCentral folder.
 ```
 sudo python setup.py install
 ```
    Enter your password if needed.
    This setup  installs all the required Python modules.
 
-3. Run the config script (without sudo).
+3) Run the config script (without sudo).
 ```
 python configure.py --init
 ```
@@ -28,7 +28,7 @@ python configure.py --apikey
 ```
    You will be prompted for your Threat Central credentials.
 
-4. Import the ThreatCentral transform configuration file in Maltego
+4) Import the ThreatCentral transform configuration file in Maltego
 
    If the process completed successfully, then you receive the following message:
 
