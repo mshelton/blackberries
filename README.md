@@ -2,42 +2,39 @@
 
 Maltego transform for Threat Central.
 
-Install instructions:
+Installation instructions:
 
-Step 1: Install setuptools
+1. Install setuptools.
 
-Open a terminal 
-
+Open a terminal. 
+```bash
 curl https://bootstrap.pypa.io/ez_setup.py -s -o - | sudo python
+```
 
-
-Step 2: Unzip ThreatCentral.zip
-
-In the terminal cd to the unzipped ThreatCentral folder.
-
+2. Unzip ThreatCentral.zip in the terminal cd to the unzipped ThreatCentral folder.
+```bash
 sudo python setup.py install
+```
+Enter your password if needed.
+This setup  installs all the required Python modules.
 
-Insert your password if needed.
 
-This setup should install all the needed Python modules.
-
-
-Step 3: Run the config script (without sudo)
-
+3. Run the config script (without sudo).
+```bash
 python configure.py --init
+```
+This script checks the canari and ThreatCentral configuration and creates the ThreatCentral transform configuration file for Maltego.
 
-This will check the canari and ThreatCentral configuration and wil create the ThreatCentral transform configuration file for Maltego
-
-If above completed without any errors, the api key for Threat Central needs to be created :
-
+If the script completes without errors, the API key for Threat Central needs to be created:
+```bash
 python configure.py --apikey
+```
+You will be prompted for your Threat Central credentials.
 
-You will be prompted for your Threat Central account details.
 
+4. Import the ThreatCentral transform configuration file in Maltego
 
-Step 4 : Import the ThreatCentral transform configuration file in Maltego
-
-If everything went ok , you should have seen this :
+If the process completed successfully, then you receive the following message:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% SUCCESS! %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -55,5 +52,5 @@ If everything went ok , you should have seen this :
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% SUCCESS! %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In Maltego you will need to import the configuration file, you can do this by following the instructions above.
+In Maltego you  need to import the configuration file. You can do this by following the instructions above.
 
