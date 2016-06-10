@@ -62,7 +62,6 @@ def dotransform(request, response, config):
                 if indicator.get('description'):
                     e += Label('Description', '<br/>'.join(encode_to_utf8(indicator.get('description')
                                                                           ).split('\n')))
-
                 response += e
 
                 if len(indicator.get('observables', list())) is not 0:
@@ -77,7 +76,7 @@ def dotransform(request, response, config):
                             filehashes = observable.get('fileHashes', list())
                             for filehash in filehashes:
                                 e = FileHash(filehash.get('value'), weight=weight)
-                                e.name = observable.get('name')
+                                #e.name = observable.get('name')
                                 e.value = filehash.get('value')
                                 e.htype = filehash.get('type')
                                 e.resourceId = observable.get('resourceId')
